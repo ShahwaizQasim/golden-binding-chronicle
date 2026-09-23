@@ -13,3 +13,9 @@
 - [ ] Build guided multi-step award entry form with accessible validation
 - [ ] Link homepage and awards navigation to the new routes
 - [ ] Add route-specific metadata and verify desktop/mobile flows
+
+## Winners Archive
+
+- [ ] Build filterable winners archive with category filters and year navigation
+- [ ] Add winner cards and editorial winner detail pages
+- [ ] Connect Winners navigation and verify responsive interactions

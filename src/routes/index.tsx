@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Menu, Search, X } from "lucide-react";
 import { useState, type FormEvent } from "react";
@@ -90,15 +90,13 @@ function Header() {
         <nav className="hidden items-center gap-5 xl:flex" aria-label="Primary navigation">
           <a href="#top" className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-gold">Home</a>
           {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors hover:text-brand-gold">
-              {item}
-            </a>
+            item === "Awards" ? <Link key={item} to="/awards" className="text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors hover:text-brand-gold">Awards</Link> : <a key={item} href={`#${item.toLowerCase()}`} className="text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors hover:text-brand-gold">{item}</a>
           ))}
           <button type="button" className="p-2 transition-colors hover:text-brand-gold" aria-label="Search">
             <Search className="size-4" aria-hidden="true" />
           </button>
           <Button asChild variant="hero" className="min-h-10 px-4">
-            <a href="#awards">Enter the Awards</a>
+            <Link to="/awards/enter">Enter the Awards</Link>
           </Button>
         </nav>
         <button
@@ -127,7 +125,7 @@ function Header() {
                 </a>
               ))}
               <Button asChild variant="hero" className="mt-4">
-                <a href="#awards" onClick={() => setOpen(false)}>Enter the Awards</a>
+                <Link to="/awards/enter">Enter the Awards</Link>
               </Button>
             </div>
           </motion.nav>
